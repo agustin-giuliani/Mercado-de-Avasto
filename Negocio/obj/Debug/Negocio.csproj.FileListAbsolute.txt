@@ -1,0 +1,11 @@
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Negocio.dll
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Negocio.pdb
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Datos.dll
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Entidades.dll
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Datos.pdb
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Entidades.pdb
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\obj\Debug\Negocio.dll
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\obj\Debug\Negocio.pdb
