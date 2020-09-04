@@ -21,5 +21,10 @@ namespace Negocio
         {
             return objDatCliente.listadoCliente(cual);
         }
+
+        public int DeleteCliente(string accion,Cliente objCliente)
+        {
+            return objDatCliente.DeleteCliente(accion, objCliente);
+        }
     }
 }

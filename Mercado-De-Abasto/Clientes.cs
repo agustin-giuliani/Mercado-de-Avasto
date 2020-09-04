@@ -56,11 +56,11 @@ namespace Mercado_De_Abasto
 
         private void TxtBox_a_obj()
         {
-           
+
             objEntCliente.ID = int.Parse(textBox1.Text);
             objEntCliente.Nombre = textBox2.Text;
             objEntCliente.DevePago = textBox3.Text;
-            objEntCliente.FechaCOM = textBox4.Text;
+            objEntCliente.FechaCOM = dateTimePicker1.Value;
             objEntCliente.Compra = textBox5.Text;
         }
 
@@ -106,19 +106,19 @@ namespace Mercado_De_Abasto
         {
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
-            textBox3.Text = string.Empty;
-            textBox4.Text = string.Empty;
+            textBox3.Text = string.Empty;         
             textBox5.Text = string.Empty;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+      
 
         }
 
         private void ds_a_TxtBox(DataSet ds)
         {
-            textBox4.Text = ds.Tables[0].Rows[0]["FechaCOM"].ToString();
+            //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
             textBox5.Text = ds.Tables[0].Rows[0]["COMPRA"].ToString();
             textBox3.Text = ds.Tables[0].Rows[0]["DevePago"].ToString();
             textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
@@ -156,6 +156,47 @@ namespace Mercado_De_Abasto
                 MessageBox.Show("ERROR AL Modificar Cliente:" +
                     "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
             }
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataSet ds = new DataSet();
+            objEntCliente.ID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            ds = objNegCliente.listadoCliente(objEntCliente.ID.ToString());
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ds_a_TxtBox(ds);
+                button1.Visible = false;
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_a_obj();
+                resultado = objNegCliente.DeleteCliente("Delet", objEntCliente);
+                if (resultado == -1)
+                {
+                    MessageBox.Show("No se Borro el cliente en el sistema" + "INTENTE NUEVAMENTE");
+                }
+                else
+                {
+                    MessageBox.Show("Se Borro con exito el cliente");
+                    llenarDvg();
+                    Limpiar();
+                    //dataGridView1.Columns.Clear();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL borrar Cliente:" +
+                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
+            }
+
 
         }
     }

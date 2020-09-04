@@ -13,7 +13,7 @@ namespace Entidades
         private string compra;
         private string nombre;
         private string devePago;
-        private string fechaCOM;
+        private DateTime fechaCOM;
         #endregion
 
         #region constructor
@@ -22,7 +22,7 @@ namespace Entidades
             id = 0;
             nombre = string.Empty;
             compra = string.Empty;
-            fechaCOM = string.Empty;
+            fechaCOM = DateTime.MinValue;
             devePago = string.Empty;
         }
         #endregion
@@ -46,7 +46,7 @@ namespace Entidades
             set { compra = value; }
         }
 
-        public string FechaCOM
+        public DateTime FechaCOM
         {
             get { return fechaCOM; }
             set { fechaCOM = value; }

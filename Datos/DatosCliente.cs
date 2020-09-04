@@ -18,10 +18,11 @@ namespace Datos
 
             if (accion == "Agregar")
                 orden = "insert into Cliente values ('" + objCliente.ID + "', '" + objCliente.Nombre +
-                    "', '" + objCliente.Compra + "', '" + objCliente.DevePago + "', " + objCliente.FechaCOM + ") ;";
+                    "', '" + objCliente.Compra + "', '" + objCliente.DevePago + "', '" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "') ;";
             if (accion == "Modificar")
-                orden = "update Cliente set Nombre='" + objCliente.Nombre + "', '" + objCliente.FechaCOM + "', '" +
-                   objCliente.Compra + "', '" + objCliente.DevePago + "',Where ID=" + objCliente.ID + ";";
+            {
+                orden = "update Cliente set Nombre='" + objCliente.Nombre + "' '" + objCliente.DevePago + "' '" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "''" + objCliente.Compra + "'where ID='" + objCliente.ID +"';";
+            }
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
@@ -77,5 +78,32 @@ namespace Datos
         }
         #endregion
 
+        public int DeleteCliente(string accion, Cliente objCliente)
+        {
+
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Delet")
+                orden = "DELETE from Cliente where ID=" + objCliente.ID;
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al tratar borrar el Cliente", e);
+            }
+
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
     }
 }
