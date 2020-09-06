@@ -9,20 +9,17 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class DatosStock : DatosConexionDB
+    public class DatosStock : DatosConexionDB
     {
-        public int abmStock(string accion, Stock objStock)
+        public int abmStock(string accion, Stocks objStock)
         {
             int resultado = -1;
             string orden = string.Empty;
 
             if (accion == "Agregar")
-                orden = "insert into Stock values ('" + objStock.Nombre + "', '" + objStock.ID +
-                    "', '" + objStock.Precio + "', '" + objStock.FechaEN + "', " + objStock.Cantidad + ") ;";
-            if (accion == "Modificar")
-                orden = "update Stock set ID= '" + objStock.Nombre + "', '" + objStock.Cantidad + "', '" +
-                   objStock.ID + "', '" + objStock.Precio + "', " + objStock.FechaEN + ";";
-
+                orden = "insert into Stock values ('" + objStock.ID + "', '" + objStock.Nombre +
+                    "', '" + objStock.Cantidad + "', '" + objStock.FechaEN.ToString("yyy/MM/dd") + "', '" + objStock.Precio + "') ;";
+           
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
             try
@@ -47,7 +44,7 @@ namespace Datos
         {
             string orden = string.Empty;
             if (cual != "Todos")
-                orden = " select *from Stock where Nombre = " + int.Parse(cual) + ";";
+                orden = " select *from Stock where ID = " + int.Parse(cual) + ";";
             else
                 orden = "select * from Stock;";
 
@@ -76,6 +73,62 @@ namespace Datos
             return ds;
         }
         #endregion
+
+        public int DeleteStock(string accion, Stocks objStock)
+        {
+
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Delet")
+                orden = "DELETE from Stock where ID=" + objStock.ID;
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al tratar borrar el Cliente", e);
+            }
+
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+
+        public int ModStock(string accion,Stocks objStock)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+
+            if (accion == "Modificar")
+                orden = "update Stock set Nombre= '" + objStock.Nombre + "' where ID='" + objStock.ID + "' '" +
+                   objStock.Cantidad + "' '" + objStock.Precio + "' " + objStock.FechaEN.ToString("yyy/MM/dd") + ";";
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
 
     }
 }

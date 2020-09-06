@@ -119,7 +119,7 @@ namespace Mercado_De_Abasto
         private void ds_a_TxtBox(DataSet ds)
         {
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
-            textBox5.Text = ds.Tables[0].Rows[0]["COMPRA"].ToString();
+            textBox5.Text = ds.Tables[0].Rows[0]["Compra"].ToString();
             textBox3.Text = ds.Tables[0].Rows[0]["DevePago"].ToString();
             textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["ID"].ToString();
