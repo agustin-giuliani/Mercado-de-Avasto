@@ -9,19 +9,17 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class DatosVenta : DatosConexionDB
+    public class DatosVenta : DatosConexionDB
     {
-        public int abmVenta(string accion, Venta objVenta)
+        public int abmVenta(string accion, Ventax objVenta)
         {
             int resultado = -1;
             string orden = string.Empty;
 
             if (accion == "Agregar")
-                orden = "insert into Venta values ('" + objVenta.Nombre + "', '" + objVenta.ID +
-                    "', '" + objVenta.Precio + "', '" + objVenta.FechaVEN + ") ;";
-            if (accion == "Modificar")
-                orden = "update Venta set ID= '" + objVenta.Nombre + "', '" + objVenta.Cantidad + "', '" +
-                   objVenta.ID + "', '" + objVenta.Precio + "', " + objVenta.FechaVEN + ";";
+                orden = "insert into Venta values ('" + objVenta.ID + "', '" + objVenta.Nombre +
+                    "', '" + objVenta.Cantidad + "', '" + objVenta.Precio + "','" + objVenta.FechaVEN.ToString("yyy/MM/dd") + "') ;";
+            
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
@@ -47,7 +45,7 @@ namespace Datos
         {
             string orden = string.Empty;
             if (cual != "Todos")
-                orden = " select *from Venta where Nombre = " + int.Parse(cual) + ";";
+                orden = " select *from Venta where ID = " + int.Parse(cual) + ";";
             else
                 orden = "select * from Venta;";
 
@@ -76,5 +74,63 @@ namespace Datos
             return ds;
         }
         #endregion
+
+        public int DeleteVenta(string accion, Ventax objVenta)
+        {
+
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Delet")
+                orden = "DELETE from Venta where ID=" + objVenta.ID;
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al tratar borrar el Cliente", e);
+            }
+
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+
+
+        public int ModVenta(string accion, Ventax objVenta)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+
+            if (accion == "Modificar")
+                orden = "update Venta set Nombre= '" + objVenta.Nombre + "' where ID='" + objVenta.ID + "' '" +
+                   objVenta.Cantidad + "' '" + objVenta.Precio + "' " + objVenta.FechaVEN.ToString("yyy/MM/dd") + ";";
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+
     }
 }

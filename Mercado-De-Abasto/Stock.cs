@@ -128,6 +128,7 @@ namespace Mercado_De_Abasto
                     llenarDvg();
                     Limpiar();
                     textBox1.Enabled = true;
+                    button1.Visible = true;
                 }
 
 
@@ -171,6 +172,7 @@ namespace Mercado_De_Abasto
                     llenarDvg();
                     Limpiar();
                     //dataGridView1.Columns.Clear();
+                    button1.Visible = true;
                 }
             }
             catch
