@@ -21,7 +21,8 @@ namespace Datos
                     "', '" + objCliente.Compra + "', '" + objCliente.DevePago + "', '" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "') ;";
             if (accion == "Modificar")
             {
-                orden = "update Cliente set Nombre='" + objCliente.Nombre + "' '" + objCliente.DevePago + "' '" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "''" + objCliente.Compra + "'where ID='" + objCliente.ID +"';";
+                orden = "update Cliente set Nombre= '" + objCliente.Nombre + 
+                    "', DevePago= '" + objCliente.DevePago + "', FechaCOM='" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "', Compra='" + objCliente.Compra + "'Where ID='" + objCliente.ID + "';";
             }
 
             SqlCommand cmd = new SqlCommand(orden, conexion);

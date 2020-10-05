@@ -110,8 +110,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Modificar")
-                orden = "update Venta set Nombre= '" + objVenta.Nombre + "' where ID='" + objVenta.ID + "' '" +
-                   objVenta.Cantidad + "' '" + objVenta.Precio + "' " + objVenta.FechaVEN.ToString("yyy/MM/dd") + ";";
+                orden = "update Venta set Nombre= '" + objVenta.Nombre + "' , Cantidad='" +
+                   objVenta.Cantidad + "', Precio='" + objVenta.Precio + "', FechaVEN='" + objVenta.FechaVEN.ToString("yyy/MM/dd") + "'Where ID='" + objVenta.ID + "';";
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 

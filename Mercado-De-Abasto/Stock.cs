@@ -120,7 +120,7 @@ namespace Mercado_De_Abasto
                 int resultado = -1;
                 TxtBox_a_obj();
                 resultado = objNegStock.ModStock("Modificar", objEntStock);
-                if (resultado != -1)
+                if (resultado == -1)
                     MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
                 else
                 {

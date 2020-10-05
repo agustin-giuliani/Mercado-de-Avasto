@@ -19,7 +19,7 @@ namespace Mercado_De_Abasto
             InitializeComponent();
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Nombre";
+            dataGridView1.Columns[1].HeaderText = "Producto";
             dataGridView1.Columns[2].HeaderText = "Cantidad";
             dataGridView1.Columns[3].HeaderText = "Precio";
             dataGridView1.Columns[4].HeaderText = "Fecha Venta";
@@ -128,7 +128,7 @@ namespace Mercado_De_Abasto
                 int resultado = -1;
                 TxtBox_a_obj();
                 resultado = objNegVenta.ModVenta("Modificar", objEntVenta);
-                if (resultado != -1)
+                if (resultado == -1)
                     MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
                 else
                 {

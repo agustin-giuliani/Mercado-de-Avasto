@@ -139,7 +139,7 @@ namespace Mercado_De_Abasto
                 int resultado = -1;
                 TxtBox_a_obj();
                 resultado = objNegCliente.abmCliente("Modificar", objEntCliente);
-                if (resultado != -1)
+                if (resultado == -1)
                     MessageBox.Show("No se Modifico el cliente en el sistema" + "INTENTE NUEVAMENTE");
                 else
                 {
