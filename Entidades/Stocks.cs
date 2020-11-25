@@ -11,18 +11,20 @@ namespace Entidades
         #region atributos
         private int id;
         private int precio;
-        private string nombre;
-        private string cantidad;
+        private string producto;
+        private string cantida;
         private DateTime fechaEN;
+        private string nomProvedor;
         #endregion
         #region constructor
         public void Stockx()
         {
             id = 0;
-            nombre = string.Empty;
-            cantidad = string.Empty;
+            producto = string.Empty;
+            cantida = string.Empty;
             fechaEN = DateTime.MinValue;
             precio = 0;
+            nomProvedor = string.Empty;
         }
         #endregion
 
@@ -33,16 +35,16 @@ namespace Entidades
             set { id = value; }
         }
 
-        public string Nombre
+        public string Producto
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return producto; }
+            set { producto = value; }
         }
 
-        public string Cantidad
+        public string Cantida
         {
-            get { return cantidad; }
-            set { cantidad = value; }
+            get { return cantida; }
+            set { cantida = value; }
         }
 
         public DateTime FechaEN
@@ -55,6 +57,12 @@ namespace Entidades
         {
             get { return precio; }
             set { precio = value; }
+        }
+
+        public string NomProvedor
+        {
+            get { return nomProvedor; }
+            set { nomProvedor = value; }
         }
         #endregion
     }

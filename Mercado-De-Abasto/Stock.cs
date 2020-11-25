@@ -17,18 +17,20 @@ namespace Mercado_De_Abasto
         public Stock()
         {
             InitializeComponent();
-            dataGridView1.ColumnCount = 5;
+            dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Nombre";
+            dataGridView1.Columns[1].HeaderText = "Producto";
             dataGridView1.Columns[2].HeaderText = "Cantidad";
             dataGridView1.Columns[3].HeaderText = "Fecha de entrada";
             dataGridView1.Columns[4].HeaderText = "Precio";
+            dataGridView1.Columns[5].HeaderText = "Nombre Provedores";
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
             dataGridView1.Columns[2].Width = 125;
             dataGridView1.Columns[3].Width = 125;
             dataGridView1.Columns[4].Width = 125;
+            dataGridView1.Columns[5].Width = 125;
             llenarDvg();
         }
 
@@ -46,7 +48,7 @@ namespace Mercado_De_Abasto
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4]);
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5]);
                 }
             }
             else
@@ -57,10 +59,11 @@ namespace Mercado_De_Abasto
         {
 
             objEntStock.ID = int.Parse(textBox1.Text);
-            objEntStock.Nombre = textBox2.Text;
-            objEntStock.Cantidad = textBox3.Text;
+            objEntStock.Producto = textBox2.Text;
+            objEntStock.Cantida = textBox3.Text;
             objEntStock.FechaEN = dateTimePicker1.Value;
             objEntStock.Precio = int.Parse(textBox5.Text);
+            objEntStock.NomProvedor = textBox4.Text;
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -100,14 +103,17 @@ namespace Mercado_De_Abasto
             textBox2.Text = string.Empty;
             textBox3.Text = string.Empty;
             textBox5.Text = string.Empty;
+            textBox4.Text = string.Empty;
         }
 
         private void ds_a_TxtBox(DataSet ds)
         {
+
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
             textBox5.Text = ds.Tables[0].Rows[0]["Precio"].ToString();
-            textBox3.Text = ds.Tables[0].Rows[0]["Cantidad"].ToString();
-            textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
+            textBox4.Text = ds.Tables[0].Rows[0]["NomProvedor"].ToString();
+            textBox3.Text = ds.Tables[0].Rows[0]["Cantida"].ToString();
+            textBox2.Text = ds.Tables[0].Rows[0]["Producto"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["ID"].ToString();
 
             textBox1.Enabled = false;

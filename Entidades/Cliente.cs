@@ -10,20 +10,25 @@ namespace Entidades
     {
         #region atributos
         private int id;
-        private string compra;
+        private int idvent;
         private string nombre;
-        private string devePago;
-        private DateTime fechaCOM;
+        private string Pagodeve;
+        private DateTime fechaPago;
+        private int tel;
+        private string tipodepago;
         #endregion
 
         #region constructor
         public void Clientes()
         {
             id = 0;
+            tel = 0;
             nombre = string.Empty;
-            compra = string.Empty;
-            fechaCOM = DateTime.MinValue;
-            devePago = string.Empty;
+            idvent = 0;
+            fechaPago = DateTime.MinValue;
+            Pagodeve = string.Empty;
+            tipodepago = string.Empty;
+
         }
         #endregion
 
@@ -40,22 +45,36 @@ namespace Entidades
             set { nombre = value; }
         }
 
-        public string Compra
+       
+
+        public DateTime FechaPago
         {
-            get { return compra; }
-            set { compra = value; }
+            get { return fechaPago; }
+            set { fechaPago = value; }
         }
 
-        public DateTime FechaCOM
+        public string PagoDeve
         {
-            get { return fechaCOM; }
-            set { fechaCOM = value; }
+            get { return Pagodeve; }
+            set { Pagodeve = value; }
         }
 
-        public string DevePago
+        public int Tel
         {
-            get { return devePago; }
-            set { devePago = value; }
+            get { return tel; }
+            set { tel = value; }
+        }
+
+        public string TipodePago
+        {
+            get { return tipodepago; }
+            set { tipodepago = value; }
+        }
+
+        public int IDVent
+        {
+            get { return idvent; }
+            set { idvent = value; }
         }
         #endregion
     }

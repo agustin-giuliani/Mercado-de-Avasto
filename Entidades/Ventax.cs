@@ -11,19 +11,21 @@ namespace Entidades
         #region atributos
         private int id;
         private int precio;
-        private string nombre;
+        private string producto;
         private string cantidad;
-        private DateTime fechaVEN;
+        private DateTime fechaVen;
+        
         #endregion
 
         #region constructor
         public void Ventas()
         {
             id = 0;
-            nombre = string.Empty;
+            producto = string.Empty;
             cantidad = string.Empty;
-            fechaVEN = DateTime.MinValue;
+            fechaVen = DateTime.MinValue;
             precio = 0;
+            
         }
         #endregion
 
@@ -34,10 +36,10 @@ namespace Entidades
             set { id = value; }
         }
 
-        public string Nombre
+        public string Producto
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return producto; }
+            set { producto = value; }
         }
 
         public string Cantidad
@@ -46,10 +48,10 @@ namespace Entidades
             set { cantidad = value; }
         }
 
-        public DateTime FechaVEN
+        public DateTime FechaVen
         {
-            get { return fechaVEN; }
-            set { fechaVEN = value; }
+            get { return fechaVen; }
+            set { fechaVen = value; }
         }
 
         public int Precio
@@ -57,6 +59,8 @@ namespace Entidades
             get { return precio; }
             set { precio = value; }
         }
+
+
         #endregion
     }
 }

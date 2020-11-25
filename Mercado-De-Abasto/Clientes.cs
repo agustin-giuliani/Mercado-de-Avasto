@@ -18,18 +18,23 @@ namespace Mercado_De_Abasto
         public Clientes()
         {
             InitializeComponent();
-            dataGridView1.ColumnCount = 5;
-            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.ColumnCount = 7;
+            dataGridView1.Columns[0].HeaderText = "ID del cliente";
             dataGridView1.Columns[1].HeaderText = "Nombre";
-            dataGridView1.Columns[2].HeaderText = "Compra";
+            dataGridView1.Columns[2].HeaderText = "Tipo de Pago";
             dataGridView1.Columns[3].HeaderText = "Deve o Pago";
-            dataGridView1.Columns[4].HeaderText = "Fecha de compra";
+            dataGridView1.Columns[4].HeaderText = "telefono";
+            dataGridView1.Columns[5].HeaderText = "Fecha de pago";
+            dataGridView1.Columns[6].HeaderText = "Id de la venta";
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
             dataGridView1.Columns[2].Width = 125;
             dataGridView1.Columns[3].Width = 125;
             dataGridView1.Columns[4].Width = 125;
+            dataGridView1.Columns[5].Width = 125;
+            dataGridView1.Columns[6].Width = 125;
+
             llenarDvg();
         }
 
@@ -47,7 +52,7 @@ namespace Mercado_De_Abasto
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4]);
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5], dr[6]);
                 }
             }
             else
@@ -59,9 +64,11 @@ namespace Mercado_De_Abasto
 
             objEntCliente.ID = int.Parse(textBox1.Text);
             objEntCliente.Nombre = textBox2.Text;
-            objEntCliente.DevePago = textBox3.Text;
-            objEntCliente.FechaCOM = dateTimePicker1.Value;
-            objEntCliente.Compra = textBox5.Text;
+            objEntCliente.Tel = int.Parse(textBox4.Text);
+            objEntCliente.PagoDeve = textBox3.Text;
+            objEntCliente.TipodePago = textBox5.Text;
+            objEntCliente.FechaPago = dateTimePicker1.Value;
+            objEntCliente.IDVent = int.Parse(textBox6.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -106,8 +113,10 @@ namespace Mercado_De_Abasto
         {
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
-            textBox3.Text = string.Empty;         
+            textBox3.Text = string.Empty;
             textBox5.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            textBox6.Text = string.Empty;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -118,9 +127,11 @@ namespace Mercado_De_Abasto
 
         private void ds_a_TxtBox(DataSet ds)
         {
+            textBox6.Text = ds.Tables[0].Rows[0]["IDVent"].ToString();
+            textBox4.Text = ds.Tables[0].Rows[0]["Tel"].ToString();
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
-            textBox5.Text = ds.Tables[0].Rows[0]["Compra"].ToString();
-            textBox3.Text = ds.Tables[0].Rows[0]["DevePago"].ToString();
+            textBox5.Text = ds.Tables[0].Rows[0]["TipodePago"].ToString();
+            textBox3.Text = ds.Tables[0].Rows[0]["PagoDeve"].ToString();
             textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["ID"].ToString();
 

@@ -49,6 +49,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(751, 12);
@@ -71,9 +72,10 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.button1.Location = new System.Drawing.Point(12, 368);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 19;
             this.button1.Text = "Cargar";
             this.button1.UseVisualStyleBackColor = true;
@@ -81,9 +83,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(114, 368);
+            this.button2.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.button2.Location = new System.Drawing.Point(108, 368);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(81, 32);
             this.button2.TabIndex = 20;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,9 +94,10 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.button3.Location = new System.Drawing.Point(222, 368);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 32);
             this.button3.TabIndex = 21;
             this.button3.Text = "Borrar";
             this.button3.UseVisualStyleBackColor = true;
@@ -130,45 +134,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 66);
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.label1.Location = new System.Drawing.Point(20, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(24, 17);
             this.label1.TabIndex = 27;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 116);
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.label2.Location = new System.Drawing.Point(20, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(161, 17);
             this.label2.TabIndex = 28;
             this.label2.Text = "Nombre del Producto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 224);
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.label3.Location = new System.Drawing.Point(20, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Cantidad";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 169);
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.label4.Location = new System.Drawing.Point(20, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(54, 17);
             this.label4.TabIndex = 30;
             this.label4.Text = "Precio";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Britannic Bold", 12F);
             this.label5.Location = new System.Drawing.Point(20, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(130, 17);
             this.label5.TabIndex = 31;
             this.label5.Text = "Fecha de la venta";
             // 

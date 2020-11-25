@@ -17,8 +17,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Agregar")
-                orden = "insert into Venta values ('" + objVenta.ID + "', '" + objVenta.Nombre +
-                    "', '" + objVenta.Cantidad + "', '" + objVenta.Precio + "','" + objVenta.FechaVEN.ToString("yyy/MM/dd") + "') ;";
+                orden = "insert into Venta values ('" + objVenta.ID + "', '" + objVenta.Producto +
+                    "', '" + objVenta.Cantidad + "', '" + objVenta.Precio + "', '" + objVenta.FechaVen.ToString("yyy/MM/dd") + "' );";
             
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
@@ -110,8 +110,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Modificar")
-                orden = "update Venta set Nombre= '" + objVenta.Nombre + "' , Cantidad='" +
-                   objVenta.Cantidad + "', Precio='" + objVenta.Precio + "', FechaVEN='" + objVenta.FechaVEN.ToString("yyy/MM/dd") + "'Where ID='" + objVenta.ID + "';";
+                orden = "update Venta set Producto= '" + objVenta.Producto + "' , Cantidad='" +
+                   objVenta.Cantidad + "', Precio='" + objVenta.Precio + "', FechaVen='" + objVenta.FechaVen.ToString("yyy/MM/dd") + "'Where ID='" + objVenta.ID + "';";
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 

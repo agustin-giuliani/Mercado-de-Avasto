@@ -17,8 +17,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Agregar")
-                orden = "insert into Stock values ('" + objStock.ID + "', '" + objStock.Nombre +
-                    "', '" + objStock.Cantidad + "', '" + objStock.FechaEN.ToString("yyy/MM/dd") + "', '" + objStock.Precio + "') ;";
+                orden = "insert into Stock values ('" + objStock.ID + "', '" + objStock.Producto +
+                    "', '" + objStock.Cantida + "', '" + objStock.FechaEN.ToString("yyy/MM/dd") + "', '" + objStock.Precio + "','" + objStock.NomProvedor + "' ) ;";
            
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
@@ -108,8 +108,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Modificar")
-                orden = "update Stock set Nombre= '" + objStock.Nombre + "', Cantidad= '" +
-                   objStock.Cantidad + "', Precio='" + objStock.Precio + "', FechaEN='" + objStock.FechaEN.ToString("yyy/MM/dd") +"'Where ID='"+ objStock.ID+"';";
+                orden = "update Stock set Producto= '" + objStock.Producto + "', Cantida= '" +
+                   objStock.Cantida + "', Precio='" + objStock.Precio + "', NomProvedor= '"+objStock.NomProvedor+"', FechaEN='" + objStock.FechaEN.ToString("yyy/MM/dd") +"'Where ID='"+ objStock.ID+"';";
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 

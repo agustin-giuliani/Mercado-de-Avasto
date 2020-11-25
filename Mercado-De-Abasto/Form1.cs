@@ -37,5 +37,17 @@ namespace Mercado_De_Abasto
             Venta Venta = new Venta();
             Venta.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 imprimirDatos = new Form2();
+            imprimirDatos.Show();
+        }
     }
 }

@@ -23,15 +23,17 @@ namespace Mercado_De_Abasto
             dataGridView1.Columns[2].HeaderText = "Cantidad";
             dataGridView1.Columns[3].HeaderText = "Precio";
             dataGridView1.Columns[4].HeaderText = "Fecha Venta";
+            
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
             dataGridView1.Columns[2].Width = 125;
             dataGridView1.Columns[3].Width = 125;
             dataGridView1.Columns[4].Width = 125;
+            
             llenarDvg();
         }
-
+        public Cliente objEntCliente = new Cliente();
         public Ventax objEntVenta = new Ventax();
         public NegocioVenta objNegVenta = new NegocioVenta();
         private void llenarDvg()
@@ -57,10 +59,11 @@ namespace Mercado_De_Abasto
         {
 
             objEntVenta.ID = int.Parse(textBox1.Text);
-            objEntVenta.Nombre = textBox2.Text;
+            objEntVenta.Producto = textBox2.Text;
             objEntVenta.Cantidad = textBox4.Text;
-            objEntVenta.FechaVEN= dateTimePicker1.Value;
+            objEntVenta.FechaVen = dateTimePicker1.Value;
             objEntVenta.Precio = int.Parse(textBox3.Text);
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -111,15 +114,16 @@ namespace Mercado_De_Abasto
 
         private void ds_a_TxtBox(DataSet ds)
         {
+            
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
             textBox4.Text = ds.Tables[0].Rows[0]["Cantidad"].ToString();
             textBox3.Text = ds.Tables[0].Rows[0]["Precio"].ToString();
-            textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
+            textBox2.Text = ds.Tables[0].Rows[0]["Producto"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["ID"].ToString();
 
             textBox1.Enabled = false;
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
 

@@ -18,11 +18,11 @@ namespace Datos
 
             if (accion == "Agregar")
                 orden = "insert into Cliente values ('" + objCliente.ID + "', '" + objCliente.Nombre +
-                    "', '" + objCliente.Compra + "', '" + objCliente.DevePago + "', '" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "') ;";
+                    "', '" + objCliente.Tel + "', '" + objCliente.PagoDeve + "','"+objCliente.TipodePago+ "', '" + objCliente.FechaPago.ToString("yyy/MM/dd") + "','" +objCliente.IDVent+ "') ;";
             if (accion == "Modificar")
             {
                 orden = "update Cliente set Nombre= '" + objCliente.Nombre + 
-                    "', DevePago= '" + objCliente.DevePago + "', FechaCOM='" + objCliente.FechaCOM.ToString("yyy/MM/dd") + "', Compra='" + objCliente.Compra + "'Where ID='" + objCliente.ID + "';";
+                    "', PagoDeve= '" + objCliente.PagoDeve + "',Tel='" + objCliente.Tel+ "', FechaPago='" + objCliente.FechaPago.ToString("yyy/MM/dd") + "', IDVent='" + objCliente.IDVent + "' , TipodePago='" + objCliente.TipodePago + "' Where ID='" + objCliente.ID + "'; ";
             }
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
