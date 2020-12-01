@@ -71,7 +71,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Britannic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(87, 272);
+            this.button4.Location = new System.Drawing.Point(87, 287);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(189, 57);
             this.button4.TabIndex = 3;

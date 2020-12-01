@@ -19,3 +19,4 @@ C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\bin\Debu
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.Clientes.resources
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado-De-Abasto.csproj.CopyComplete
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.Form2.resources
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.Provedores_y_detalle_de_la_compra.resources
