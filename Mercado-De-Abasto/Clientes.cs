@@ -21,9 +21,9 @@ namespace Mercado_De_Abasto
             dataGridView1.ColumnCount = 7;
             dataGridView1.Columns[0].HeaderText = "ID del cliente";
             dataGridView1.Columns[1].HeaderText = "Nombre";
-            dataGridView1.Columns[2].HeaderText = "Tipo de Pago";
+            dataGridView1.Columns[2].HeaderText = "Telefono";
             dataGridView1.Columns[3].HeaderText = "Deve o Pago";
-            dataGridView1.Columns[4].HeaderText = "telefono";
+            dataGridView1.Columns[4].HeaderText = "Tipo de pago";
             dataGridView1.Columns[5].HeaderText = "Fecha de pago";
             dataGridView1.Columns[6].HeaderText = "Id de la venta";
 
@@ -64,7 +64,7 @@ namespace Mercado_De_Abasto
 
             objEntCliente.ID = int.Parse(textBox1.Text);
             objEntCliente.Nombre = textBox2.Text;
-            objEntCliente.Tel = int.Parse(textBox4.Text);
+            objEntCliente.Tel = textBox4.Text;
             objEntCliente.PagoDeve = textBox3.Text;
             objEntCliente.TipodePago = textBox5.Text;
             objEntCliente.FechaPago = dateTimePicker1.Value;

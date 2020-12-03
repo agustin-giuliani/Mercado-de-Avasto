@@ -13,7 +13,7 @@ namespace Entidades
         private int id;
         private int precio;
         private string producto;
-        private string cantida;
+        private string cantidad;
         private DateTime fechaEN;
         private string nomProvedor;
         //tabla Probedores
@@ -28,7 +28,7 @@ namespace Entidades
         private string factCOM;
         //Tabla detalle compra
         private int idDetCOM;
-        private string cantidad;
+        
 
         #endregion
         #region constructor
@@ -37,7 +37,7 @@ namespace Entidades
             //tabla stock
             id = 0;
             producto = string.Empty;
-            cantida = string.Empty;
+            cantidad = string.Empty;
             fechaEN = DateTime.MinValue;
             precio = 0;
             nomProvedor = string.Empty;
@@ -53,7 +53,7 @@ namespace Entidades
             factCOM = string.Empty;
             //tabala detalle compra
             idDetCOM = 0;
-            cantidad = string.Empty;
+            
         }
         #endregion
 
@@ -73,8 +73,8 @@ namespace Entidades
 
         public string Cantida
         {
-            get { return cantida; }
-            set { cantida = value; }
+            get { return cantidad; }
+            set { cantidad = value; }
         }
 
         public DateTime FechaEN

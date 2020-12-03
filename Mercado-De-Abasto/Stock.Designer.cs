@@ -47,9 +47,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -192,7 +192,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(9, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(201, 25);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // textBox4
@@ -242,16 +242,12 @@
             this.groupBox1.Text = "Stock";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button5
+            // textBox6
             // 
-            this.button5.Font = new System.Drawing.Font("Britannic Bold", 12F);
-            this.button5.Location = new System.Drawing.Point(12, 24);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(329, 37);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Cargar Provedores y Compra del Stock";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.textBox6.Location = new System.Drawing.Point(9, 380);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 25);
+            this.textBox6.TabIndex = 19;
             // 
             // label7
             // 
@@ -262,12 +258,16 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "ID Porvedores";
             // 
-            // textBox6
+            // button5
             // 
-            this.textBox6.Location = new System.Drawing.Point(9, 380);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 25);
-            this.textBox6.TabIndex = 19;
+            this.button5.Font = new System.Drawing.Font("Britannic Bold", 12F);
+            this.button5.Location = new System.Drawing.Point(12, 24);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(329, 37);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Cargar Provedores y Compra del Stock";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Stock
             // 

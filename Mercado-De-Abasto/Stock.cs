@@ -116,7 +116,7 @@ namespace Mercado_De_Abasto
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
             textBox5.Text = ds.Tables[0].Rows[0]["Precio"].ToString();
             textBox4.Text = ds.Tables[0].Rows[0]["NomProvedor"].ToString();
-            textBox3.Text = ds.Tables[0].Rows[0]["Cantida"].ToString();
+            textBox3.Text = ds.Tables[0].Rows[0]["Cantidad"].ToString();
             textBox2.Text = ds.Tables[0].Rows[0]["Producto"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["ID"].ToString();
 

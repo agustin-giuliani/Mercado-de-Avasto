@@ -20,3 +20,4 @@ C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debu
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado-De-Abasto.csproj.CopyComplete
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.Form2.resources
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.Provedores_y_detalle_de_la_compra.resources
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Mercado-De-Abasto\obj\Debug\Mercado_De_Abasto.DetVenta_Factura_tPago.resources

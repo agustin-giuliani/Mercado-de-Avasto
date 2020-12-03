@@ -45,7 +45,7 @@ namespace Mercado_De_Abasto
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Form2 imprimirDatos = new Form2();
             imprimirDatos.Show();
         }

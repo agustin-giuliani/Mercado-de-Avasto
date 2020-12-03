@@ -52,6 +52,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetVenta-Factura-tPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetVenta-Factura-tPago.Designer.cs">
+      <DependentUpon>DetVenta-Factura-tPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetVenta-Factura-tPago.resx">
+      <DependentUpon>DetVenta-Factura-tPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

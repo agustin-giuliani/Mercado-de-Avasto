@@ -192,5 +192,12 @@ namespace Mercado_De_Abasto
                     "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
+            detVenta_Factura_TPago.Show();
+        }
     }
 }

@@ -313,8 +313,8 @@ namespace Datos
             string orden = string.Empty;
 
             if (accion == "Modificar")
-                orden = "update Stock set Producto= '" + objStock.Producto + "', Cantida= '" +
-                   objStock.Cantida + "', Precio='" + objStock.Precio + "', NomProvedor= '"+objStock.NomProvedor+"', FechaEN='" + objStock.FechaEN.ToString("yyy/MM/dd") +"'Where ID='"+ objStock.ID+"';";
+                orden = "update Stock set Producto= '" + objStock.Producto + "', Cantidad= '" +
+                   objStock.Cantidad + "', Precio='" + objStock.Precio + "', NomProvedor= '"+objStock.NomProvedor+"', FechaEN='" + objStock.FechaEN.ToString("yyy/MM/dd") +"'Where ID='"+ objStock.ID+"';";
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 

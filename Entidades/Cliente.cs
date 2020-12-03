@@ -14,7 +14,7 @@ namespace Entidades
         private string nombre;
         private string Pagodeve;
         private DateTime fechaPago;
-        private int tel;
+        private string tel;
         private string tipodepago;
         #endregion
 
@@ -22,7 +22,7 @@ namespace Entidades
         public void Clientes()
         {
             id = 0;
-            tel = 0;
+            tel = string.Empty;
             nombre = string.Empty;
             idvent = 0;
             fechaPago = DateTime.MinValue;
@@ -59,7 +59,7 @@ namespace Entidades
             set { Pagodeve = value; }
         }
 
-        public int Tel
+        public string Tel
         {
             get { return tel; }
             set { tel = value; }

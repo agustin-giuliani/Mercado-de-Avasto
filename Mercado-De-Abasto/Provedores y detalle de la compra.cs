@@ -127,7 +127,7 @@ namespace Mercado_De_Abasto
           //balores provedor
             textBox4.Text = ds.Tables[0].Rows[0]["Domicilio"].ToString();
             textBox3.Text = ds.Tables[0].Rows[0]["Tel"].ToString();
-            textBox2.Text = ds.Tables[0].Rows[0]["NombreProvedores"].ToString();
+            textBox2.Text = ds.Tables[0].Rows[0]["NomProvedores"].ToString();
             textBox1.Text = ds.Tables[0].Rows[0]["IDProv"].ToString();
 
             textBox1.Enabled = false;
@@ -338,8 +338,7 @@ namespace Mercado_De_Abasto
             if (ds.Tables[0].Rows.Count > 0)
             {
                 ds_c_TxtBox(ds);
-                button4.Visible = false;
-
+               
             }
         }
 
@@ -386,7 +385,7 @@ namespace Mercado_De_Abasto
                     Limpiar();
                     //dataGridView1.Columns.Clear();
                     textBox8.Enabled = true;
-                    button4.Enabled = true;
+                   
                 }
             }
             catch
