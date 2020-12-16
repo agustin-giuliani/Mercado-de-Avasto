@@ -52,6 +52,21 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBMercadoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMercadoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMercadoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMercadoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBMercadoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMercadoDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DetVenta-Factura-tPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +135,39 @@
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBMercadoDataSet.xsc">
+      <DependentUpon>DBMercadoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMercadoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMercadoDataSet.xss">
+      <DependentUpon>DBMercadoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet1.xsc">
+      <DependentUpon>DBMercadoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMercadoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMercadoDataSet1.xss">
+      <DependentUpon>DBMercadoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet2.xsc">
+      <DependentUpon>DBMercadoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMercadoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMercadoDataSet2.xss">
+      <DependentUpon>DBMercadoDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

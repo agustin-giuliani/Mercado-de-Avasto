@@ -278,25 +278,25 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar Cliente:" +
-                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
+                MessageBox.Show("ERROR AL BORRAR EL DETALLE DE VENTA:" +
+                    "NO EXISTE EL DETALLE DE LA VENTA O INGRESO MAL ALGUNA INFORMACION.");
             }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //carga detalles Facturas
+            //carga  Facturas
             try
             {
                 int nGrabado = -1;
                 TxtBox_F_obj();
                 nGrabado = objNegVenta.abmVenta("Agregar-Factura", objEntVenta);
                 if (nGrabado == -1)
-                    MessageBox.Show("No se grabo el detalle de la venta en el sistema" + "INTENTE NUEVAMENTE");
+                    MessageBox.Show("No se grabo factura en el sistema" + "INTENTE NUEVAMENTE");
                 else
                 {
-                    MessageBox.Show("Se grabo con exito el detalle de la venta");
+                    MessageBox.Show("Se grabo con exito la factura");
                     llenarDvgF();
                     Limpiar();
                 }
@@ -305,8 +305,8 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL CARGAR Detalle de la venta:" +
-                    "NO EXISTE EL DETALLE DE LA VENTA O INGRESO MAL ALGUNA INFORMACION.");
+                MessageBox.Show("ERROR AL CARGAR LA FACTURA:" +
+                    "NO EXISTE LA FACTURA O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
 
@@ -319,11 +319,11 @@ namespace Mercado_De_Abasto
                 resultado = objNegVenta.DeleteFactura("Delet-factura", objEntVenta);
                 if (resultado == -1)
                 {
-                    MessageBox.Show("No se Borro el detalle de la venta en el sistema" + "INTENTE NUEVAMENTE");
+                    MessageBox.Show("No se Borro el detalle de la factura en el sistema" + "INTENTE NUEVAMENTE");
                 }
                 else
                 {
-                    MessageBox.Show("Se Borro con exito el detalle de la venta");
+                    MessageBox.Show("Se Borro con exito el detalle de la factura");
                     llenarDvgF();
                     Limpiar();
                     //dataGridView1.Columns.Clear();
@@ -332,8 +332,8 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar Cliente:" +
-                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
+                MessageBox.Show("ERROR AL borrar la factura:" +
+                    "NO EXISTE LA FACTURA O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
 
@@ -352,17 +352,17 @@ namespace Mercado_De_Abasto
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //carga detalles Facturas
+            //carga detalles Tipo de pagos
             try
             {
                 int nGrabado = -1;
                 TxtBox_t_obj();
                 nGrabado = objNegVenta.abmVenta("Agregar-Tipopago", objEntVenta);
                 if (nGrabado == -1)
-                    MessageBox.Show("No se grabo el detalle de la venta en el sistema" + "INTENTE NUEVAMENTE");
+                    MessageBox.Show("No se grabo el tipo de pago en el sistema" + "INTENTE NUEVAMENTE");
                 else
                 {
-                    MessageBox.Show("Se grabo con exito el detalle de la venta");
+                    MessageBox.Show("Se grabo con exito el tipo de pago");
                     llenarDvgt();
                     Limpiar();
                 }
@@ -386,6 +386,33 @@ namespace Mercado_De_Abasto
             {
                 ds_t_TxtBox(ds);
 
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_t_obj();
+                resultado = objNegVenta.DeleteTipoPago("Delet-Tpago", objEntVenta);
+                if (resultado == -1)
+                {
+                    MessageBox.Show("No se Borro el tipo de pago en el sistema" + "INTENTE NUEVAMENTE");
+                }
+                else
+                {
+                    MessageBox.Show("Se Borro con exito el tipo de pago");
+                    llenarDvgt();
+                    Limpiar();
+                    //dataGridView1.Columns.Clear();
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL borrar Cliente:" +
+                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
     }

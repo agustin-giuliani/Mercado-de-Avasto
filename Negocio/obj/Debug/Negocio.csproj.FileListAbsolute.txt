@@ -1,3 +1,4 @@
+C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Negocio.dll.config
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Negocio.dll
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Negocio.pdb
 C:\Users\agust\Desktop\Programacion\Mercado-De-Abasto\Negocio\bin\Debug\Datos.dll

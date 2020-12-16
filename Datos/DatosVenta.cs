@@ -274,6 +274,35 @@ namespace Datos
             return resultado;
         }
         #endregion
+        #region
+        public int DeleteTipoPago(string accion, Ventax objVenta)
+        {
+
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Delet-Tpago")
+                orden = "DELETE from TipodePago where IDTipoPago=" + objVenta.IDTipoPago;
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al tratar borrar el Cliente", e);
+            }
+
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+        #endregion
         public int ModVenta(string accion, Ventax objVenta)
         {
             int resultado = -1;

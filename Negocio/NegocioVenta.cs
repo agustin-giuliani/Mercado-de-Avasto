@@ -50,6 +50,10 @@ namespace Negocio
         {
             return objDatVenta.DeleteFactura(accion, objVenta);
         }
+        public int DeleteTipoPago(string accion, Ventax objVenta)
+        {
+            return objDatVenta.DeleteTipoPago(accion, objVenta);
+        }
         public int ModVenta(string accion, Ventax objVenta)
         {
             return objDatVenta.ModVenta(accion, objVenta);
