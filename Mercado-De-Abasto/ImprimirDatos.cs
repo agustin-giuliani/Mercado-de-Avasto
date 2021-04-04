@@ -23,9 +23,9 @@ namespace Mercado_De_Abasto
         public SqlConnection conexion;
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Form1 form1 = new Form1();
-            form1.Show();
+            this.Hide();
+            Clientes Cliente = new Clientes();
+            Cliente.Show();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -61,37 +61,12 @@ namespace Mercado_De_Abasto
             dataGridView1.DataMember = "Cliente";
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.DBMercadoConnectionString);
-            string query = "select * from Stock where " + comboBox2.Text + " like '%" + textBox2.Text + "%'";
-            SqlDataAdapter ada = new SqlDataAdapter(query, con);
-
-            con.Open();
-            DataSet data = new DataSet();
-            ada.Fill(data, "Stock");
-
-            dataGridView2.DataSource = data;
-            dataGridView2.DataMember = "Stock";
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.DBMercadoConnectionString);
-            string query = "select * from Venta where " + comboBox3.Text + " like '%" + textBox3.Text + "%'";
-            SqlDataAdapter ada = new SqlDataAdapter(query, con);
 
-            con.Open();
-            DataSet data = new DataSet();
-            ada.Fill(data, "Venta");
-
-            dataGridView3.DataSource = data;
-            dataGridView3.DataMember = "Venta";
-        }
     }
 }

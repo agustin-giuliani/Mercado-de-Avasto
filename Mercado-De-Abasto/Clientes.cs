@@ -22,7 +22,7 @@ namespace Mercado_De_Abasto
             dataGridView1.Columns[0].HeaderText = "ID del cliente";
             dataGridView1.Columns[1].HeaderText = "Nombre";
             dataGridView1.Columns[2].HeaderText = "Telefono";
-            dataGridView1.Columns[3].HeaderText = "Deve o Pago";
+            dataGridView1.Columns[3].HeaderText = "Debe o Pago";
             dataGridView1.Columns[4].HeaderText = "Tipo de pago";
             dataGridView1.Columns[5].HeaderText = "Fecha de pago";
             dataGridView1.Columns[6].HeaderText = "Id de la venta";
@@ -211,6 +211,13 @@ namespace Mercado_De_Abasto
             }
 
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 imprimirDatos = new Form2();
+            imprimirDatos.Show();
         }
     }
 }

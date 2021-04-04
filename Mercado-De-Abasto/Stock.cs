@@ -204,5 +204,12 @@ namespace Mercado_De_Abasto
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
     }
 }

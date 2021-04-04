@@ -13,6 +13,7 @@ namespace Datos
     {
         public int abmCliente(string accion, Cliente objCliente)
         {
+            //Carga los datos de Cliente
             int resultado = -1;
             string orden = string.Empty;
 
@@ -47,6 +48,7 @@ namespace Datos
         #region metodoListadoSTOCK
         public DataSet listadoCliente(string cual)
         {
+            //Traee todos los datos de la tabla o los trae a todos por el id
             string orden = string.Empty;
             if (cual != "Todos")
                 orden = " select *from Cliente where ID = " + int.Parse(cual) + ";";
@@ -81,6 +83,7 @@ namespace Datos
 
         public int DeleteCliente(string accion, Cliente objCliente)
         {
+            //borrar datos de cliente
 
             int resultado = -1;
             string orden = string.Empty;

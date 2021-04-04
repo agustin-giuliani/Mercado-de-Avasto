@@ -199,5 +199,12 @@ namespace Mercado_De_Abasto
             DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
             detVenta_Factura_TPago.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 Form4 = new Form4();
+            Form4.Show();
+        }
     }
 }

@@ -306,9 +306,10 @@ namespace Datos
             return resultado;
         }
 
-        //Modifica los datos del stock
+        
         public int ModStock(string accion,Stocks objStock)
         {
+            //Modifica los datos del stock
             int resultado = -1;
             string orden = string.Empty;
 
