@@ -18,22 +18,21 @@ namespace Mercado_De_Abasto
         public Clientes()
         {
             InitializeComponent();
-            dataGridView1.ColumnCount = 7;
+            dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].HeaderText = "ID del cliente";
             dataGridView1.Columns[1].HeaderText = "Nombre";
             dataGridView1.Columns[2].HeaderText = "Telefono";
             dataGridView1.Columns[3].HeaderText = "Debe o Pago";
             dataGridView1.Columns[4].HeaderText = "Tipo de pago";
-            dataGridView1.Columns[5].HeaderText = "Fecha de pago";
-            dataGridView1.Columns[6].HeaderText = "Id de la venta";
+           
+            
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
             dataGridView1.Columns[2].Width = 125;
             dataGridView1.Columns[3].Width = 125;
             dataGridView1.Columns[4].Width = 125;
-            dataGridView1.Columns[5].Width = 125;
-            dataGridView1.Columns[6].Width = 125;
+        
 
             llenarDvg();
         }
@@ -52,7 +51,7 @@ namespace Mercado_De_Abasto
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5], dr[6]);
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4]);
                 }
             }
             else

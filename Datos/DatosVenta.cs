@@ -18,10 +18,10 @@ namespace Datos
             //carga la tabla venta
             if (accion == "Agregar")
                 orden = "insert into Venta values ('" + objVenta.ID + "', '" + objVenta.Producto +
-                    "', '" + objVenta.Cantidad + "', '" + objVenta.Precio + "', '" + objVenta.FechaVen.ToString("yyy/MM/dd") + "' );";
+                    "', '" + objVenta.Cantidad + "', '" + objVenta.Precio + "', '" + objVenta.FechaVen.ToString("yyy/MM/dd") + "','" + objVenta.IDStock + "' );";
             //carga la tabla detalle venta
-            if (accion == "Agregar-detVenta")
-                orden = "insert into DetVenta values ('" + objVenta.IDdetVenta + "','" + objVenta.IDStock + "','" + objVenta.Cantidad + "','" + objVenta.IDVenta + "','" + objVenta.Precio + "');";
+            //if (accion == "Agregar-detVenta")
+                //orden = "insert into DetVenta values ('" + objVenta.IDdetVenta + "','" + objVenta.IDStock + "','" + objVenta.Cantidad + "','" + objVenta.IDVenta + "','" + objVenta.Precio + "');";
             //Carga la tabla Factura
             if (accion == "Agregar-Factura")
                 orden = "insert into Facturas values ('" + objVenta.IDfac + "','" + objVenta.NrFactura + "','" + objVenta.TipoCuit + "','" + objVenta.Total + "','" + objVenta.Saldo + "','" + objVenta.FechaFac.ToString("yyy/MM/dd") + "','" + objVenta.IDCliente + "','" + objVenta.IDventa + "');";
@@ -52,8 +52,8 @@ namespace Datos
         public DataSet listadoVenta(string cual)
         {
             string orden = string.Empty;
-            if (cual != "Todos")
-                orden = " select *from Venta where ID = " + int.Parse(cual) + ";";
+            if (cual == "Todos")
+                orden = " select * from Venta inner join Facturas on ID = IDventa order by ID ;";
             else
                 orden = "select * from Venta;";
 
@@ -72,7 +72,7 @@ namespace Datos
             catch (Exception e)
             {
 
-                /// throw new Exception("Error al listar Venta", e);
+                 throw new Exception("Error al listar Venta", e);
             }
             finally
             {

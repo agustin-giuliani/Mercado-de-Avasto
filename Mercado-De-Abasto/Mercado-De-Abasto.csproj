@@ -67,6 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBMercadoDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBMercadoDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMercadoDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DetVenta-Factura-tPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +95,12 @@
     </Compile>
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
     <Compile Include="ImprimirDatos.cs">
       <SubType>Form</SubType>
@@ -131,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImprimirDatos.resx">
       <DependentUpon>ImprimirDatos.cs</DependentUpon>
@@ -185,6 +199,17 @@
     </None>
     <None Include="DBMercadoDataSet2.xss">
       <DependentUpon>DBMercadoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet3.xsc">
+      <DependentUpon>DBMercadoDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBMercadoDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBMercadoDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBMercadoDataSet3.xss">
+      <DependentUpon>DBMercadoDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

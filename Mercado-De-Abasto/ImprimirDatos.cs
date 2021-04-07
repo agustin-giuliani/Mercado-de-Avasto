@@ -30,13 +30,9 @@ namespace Mercado_De_Abasto
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dBMercadoDataSet2.Venta' Puede moverla o quitarla según sea necesario.
-            this.ventaTableAdapter.Fill(this.dBMercadoDataSet2.Venta);
-            // TODO: esta línea de código carga datos en la tabla 'dBMercadoDataSet1.Stock' Puede moverla o quitarla según sea necesario.
-            this.stockTableAdapter.Fill(this.dBMercadoDataSet1.Stock);
-            // TODO: esta línea de código carga datos en la tabla 'dBMercadoDataSet.Cliente' Puede moverla o quitarla según sea necesario.
-            this.clienteTableAdapter.Fill(this.dBMercadoDataSet.Cliente);
-
+            // TODO: esta línea de código carga datos en la tabla 'dBMercadoDataSet3.Cliente' Puede moverla o quitarla según sea necesario.
+            this.clienteTableAdapter1.Fill(this.dBMercadoDataSet3.Cliente);
+          
         }
 
         private void button2_Click(object sender, EventArgs e)

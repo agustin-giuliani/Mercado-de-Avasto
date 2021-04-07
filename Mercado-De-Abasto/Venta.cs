@@ -17,20 +17,36 @@ namespace Mercado_De_Abasto
         public Venta()
         {
             InitializeComponent();
-            dataGridView1.ColumnCount = 5;
+            dataGridView1.ColumnCount = 14;
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Producto";
             dataGridView1.Columns[2].HeaderText = "Cantidad";
             dataGridView1.Columns[3].HeaderText = "Precio";
             dataGridView1.Columns[4].HeaderText = "Fecha Venta";
-            
+            dataGridView1.Columns[5].HeaderText = "IDStock";
+            dataGridView1.Columns[6].HeaderText = "IDFactura";
+            dataGridView1.Columns[7].HeaderText = "N° Factura";
+            dataGridView1.Columns[8].HeaderText = "Cuit";
+            dataGridView1.Columns[9].HeaderText = "Total";
+            dataGridView1.Columns[10].HeaderText = "Saldo";
+            dataGridView1.Columns[11].HeaderText = "Fecha Factura";
+            dataGridView1.Columns[12].HeaderText = "IDCliente";
+            dataGridView1.Columns[13].HeaderText = "IDVenta";
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
             dataGridView1.Columns[2].Width = 125;
             dataGridView1.Columns[3].Width = 125;
             dataGridView1.Columns[4].Width = 125;
-            
+            dataGridView1.Columns[5].Width = 125;
+            dataGridView1.Columns[6].Width = 125;
+            dataGridView1.Columns[7].Width = 125;
+            dataGridView1.Columns[8].Width = 125;
+            dataGridView1.Columns[9].Width = 125;
+            dataGridView1.Columns[10].Width = 125;
+            dataGridView1.Columns[11].Width = 125;
+            dataGridView1.Columns[12].Width = 125;
+            dataGridView1.Columns[13].Width = 125;
             llenarDvg();
         }
         public Cliente objEntCliente = new Cliente();
@@ -48,7 +64,7 @@ namespace Mercado_De_Abasto
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4]);
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5], dr[6], dr[7], dr[8], dr[9], dr[10], dr[11], dr[12], dr[13]);
                 }
             }
             else
@@ -57,7 +73,7 @@ namespace Mercado_De_Abasto
 
         private void TxtBox_a_obj()
         {
-
+            objEntVenta.IDStock = int.Parse(textBox5.Text);
             objEntVenta.ID = int.Parse(textBox1.Text);
             objEntVenta.Producto = textBox2.Text;
             objEntVenta.Cantidad = textBox4.Text;
@@ -93,6 +109,8 @@ namespace Mercado_De_Abasto
                     MessageBox.Show("Se grabo con exito en el stock");
                     llenarDvg();
                     Limpiar();
+                    DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
+                    detVenta_Factura_TPago.Show();
                 }
 
 
@@ -110,11 +128,12 @@ namespace Mercado_De_Abasto
             textBox2.Text = string.Empty;
             textBox3.Text = string.Empty;
             textBox4.Text = string.Empty;
+            textBox5.Text = string.Empty;
         }
 
         private void ds_a_TxtBox(DataSet ds)
         {
-            
+            textBox5.Text = ds.Tables[0].Rows[0]["IDStock"].ToString();
             //dateTimePicker1.Value = ds.Tables[0].Rows[0]["FechaCOM"].GetType();
             textBox4.Text = ds.Tables[0].Rows[0]["Cantidad"].ToString();
             textBox3.Text = ds.Tables[0].Rows[0]["Precio"].ToString();
@@ -193,13 +212,7 @@ namespace Mercado_De_Abasto
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
-            detVenta_Factura_TPago.Show();
-        }
-
+  
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();

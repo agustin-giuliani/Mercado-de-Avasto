@@ -32,22 +32,22 @@ namespace Mercado_De_Abasto
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dBMercadoDataSet2 = new Mercado_De_Abasto.DBMercadoDataSet2();
-            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ventaTableAdapter = new Mercado_De_Abasto.DBMercadoDataSet2TableAdapters.VentaTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBMercadoDataSet2 = new Mercado_De_Abasto.DBMercadoDataSet2();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ventaTableAdapter = new Mercado_De_Abasto.DBMercadoDataSet2TableAdapters.VentaTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMercadoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMercadoDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView3
@@ -63,8 +63,48 @@ namespace Mercado_De_Abasto
             this.dataGridView3.DataSource = this.ventaBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(12, 91);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(543, 127);
+            this.dataGridView3.Size = new System.Drawing.Size(544, 147);
             this.dataGridView3.TabIndex = 14;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // productoDataGridViewTextBoxColumn
+            // 
+            this.productoDataGridViewTextBoxColumn.DataPropertyName = "Producto";
+            this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
+            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
+            // fechaVenDataGridViewTextBoxColumn
+            // 
+            this.fechaVenDataGridViewTextBoxColumn.DataPropertyName = "FechaVen";
+            this.fechaVenDataGridViewTextBoxColumn.HeaderText = "FechaVen";
+            this.fechaVenDataGridViewTextBoxColumn.Name = "fechaVenDataGridViewTextBoxColumn";
+            // 
+            // ventaBindingSource
+            // 
+            this.ventaBindingSource.DataMember = "Venta";
+            this.ventaBindingSource.DataSource = this.dBMercadoDataSet2;
+            // 
+            // dBMercadoDataSet2
+            // 
+            this.dBMercadoDataSet2.DataSetName = "DBMercadoDataSet2";
+            this.dBMercadoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox3
             // 
@@ -110,49 +150,9 @@ namespace Mercado_De_Abasto
             this.label6.TabIndex = 18;
             this.label6.Text = "Tablas Para Buscar Datos";
             // 
-            // dBMercadoDataSet2
-            // 
-            this.dBMercadoDataSet2.DataSetName = "DBMercadoDataSet2";
-            this.dBMercadoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ventaBindingSource
-            // 
-            this.ventaBindingSource.DataMember = "Venta";
-            this.ventaBindingSource.DataSource = this.dBMercadoDataSet2;
-            // 
             // ventaTableAdapter
             // 
             this.ventaTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // productoDataGridViewTextBoxColumn
-            // 
-            this.productoDataGridViewTextBoxColumn.DataPropertyName = "Producto";
-            this.productoDataGridViewTextBoxColumn.HeaderText = "Producto";
-            this.productoDataGridViewTextBoxColumn.Name = "productoDataGridViewTextBoxColumn";
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            // 
-            // fechaVenDataGridViewTextBoxColumn
-            // 
-            this.fechaVenDataGridViewTextBoxColumn.DataPropertyName = "FechaVen";
-            this.fechaVenDataGridViewTextBoxColumn.HeaderText = "FechaVen";
-            this.fechaVenDataGridViewTextBoxColumn.Name = "fechaVenDataGridViewTextBoxColumn";
             // 
             // button1
             // 
@@ -190,8 +190,8 @@ namespace Mercado_De_Abasto
             this.Text = "Buscador de Datos de Venta";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBMercadoDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBMercadoDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
