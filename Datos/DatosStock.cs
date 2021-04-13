@@ -22,13 +22,13 @@ namespace Datos
                     "', '" + objStock.Cantida + "', '" + objStock.FechaEN.ToString("yyy/MM/dd") + "', '" + objStock.Precio + "','" + objStock.NomProvedor + "',"+objStock.IDProv+" ) ;";
             //carga el provedor
             if (accion == "Agregar-Provedor")
-                orden = "insert into Provedores values('" + objStock.IDProv + "','" + objStock.NombreProvedores + "','" + objStock.Tel + "','" + objStock.Domicilio + "');";
+                orden = "insert into Provedores values('" + objStock.IDProv + "','" + objStock.NomProvedores + "','" + objStock.Tel + "','" + objStock.Domicilio + "');";
             //Carga la compra del estock
             if (accion == "Agregar-Compra")
                 orden = "insert into CompraStock values('" + objStock.IDcompraSt + "','" + objStock.IDProvedores + "','" + objStock.FechaCOM.ToString("yyy/MM/dd") + "','" + objStock.FactCOM + "');";
             //carga el detalle de la compra
-            if (accion == "Agregar-DetCompra")
-                orden = "insert into DETCompra values('" + objStock.IDDetCOM + "','" + objStock.IDcompraSt + "','" + objStock.Cantidad + "','" + objStock.Precio + "');";
+                if (accion == "Agregar-DetCompra")
+                orden = "insert into DETCompra values('" + objStock.IDDetCOM + "','" + objStock.IDCST + "','" + objStock.Cantidad + "','" + objStock.Precio + "');";
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
@@ -89,10 +89,10 @@ namespace Datos
         public DataSet listadoProvedor(string cual)
         {
             string orden = string.Empty;
-            if (cual != "Todos")
-                orden = " select *from Provedores where IDProv = " + int.Parse(cual) + ";";
+            if (cual == "Todos")
+                orden = " select * from Provedores inner join (CompraStock inner join  DETCompra on IDcompraSt = IDCST)  on IDProv = IDProvedores order by IDProv ;";
             else
-                orden = "select * from Provedores;";
+                orden = "select distinct IDProvedores, IDCST from Provedores inner join (CompraStock inner join  DETCompra on IDcompraSt = IDCST) on IDProv = IDProvedores;";
 
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
@@ -124,8 +124,8 @@ namespace Datos
         public DataSet listadoCompra(string cual)
         {
             string orden = string.Empty;
-            if (cual != "Todos")
-                orden = " select *from CompraStock where IDcompraSt = " + int.Parse(cual) + ";";
+            if (cual == "Todos")
+                orden = " select *from CompraStock inner join DETCompra on IDcompraSt = IDCST order by IDcompraST;";
             else
                 orden = "select * from CompraStock;";
 

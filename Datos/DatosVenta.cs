@@ -27,7 +27,7 @@ namespace Datos
                 orden = "insert into Facturas values ('" + objVenta.IDfac + "','" + objVenta.NrFactura + "','" + objVenta.TipoCuit + "','" + objVenta.Total + "','" + objVenta.Saldo + "','" + objVenta.FechaFac.ToString("yyy/MM/dd") + "','" + objVenta.IDCliente + "','" + objVenta.IDventa + "');";
             //carga la tabla tipo de pago
             if (accion == "Agregar-Tipopago")
-                orden = "insert into TipodePago values ('" + objVenta.IDTipoPago + "','" + objVenta.TipodePago + "','" + objVenta.FechaPago.ToString("yyy/MM/dd") + "','" + objVenta.Importe + "','" + objVenta.IDfac + "');";
+                orden = "insert into TipodePago values ('" + objVenta.IDTipoPago + "','" + objVenta.TipodePago + "','" + objVenta.FechaPago.ToString("yyy/MM/dd") + "','" + objVenta.Importe + "','" + objVenta.IDfacturas + "');";
             SqlCommand cmd = new SqlCommand(orden, conexion);
 
             try
@@ -53,7 +53,7 @@ namespace Datos
         {
             string orden = string.Empty;
             if (cual == "Todos")
-                orden = " select * from Venta inner join Facturas on ID = IDventa order by ID ;";
+                orden = " select * from Venta inner join (Facturas inner join TipodePago on IDfac = IDfacturas)  on ID = IDventa order by ID ;";
             else
                 orden = "select * from Venta;";
 

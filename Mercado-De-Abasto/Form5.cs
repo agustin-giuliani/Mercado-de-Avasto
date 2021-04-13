@@ -59,7 +59,7 @@ namespace Mercado_De_Abasto
             objEntVenta.TipodePago = textBox14.Text;
             objEntVenta.FechaPago = dateTimePicker2.Value;
             objEntVenta.Importe = int.Parse(textBox16.Text);
-            objEntVenta.IDfac = int.Parse(textBox15.Text);
+            objEntVenta.IDfacturas = int.Parse(textBox15.Text);
 
         }
 
@@ -73,7 +73,7 @@ namespace Mercado_De_Abasto
         private void ds_t_TxtBox(DataSet ds)
         {
             //selecciona los valores de detalles de factura
-            textBox16.Text = ds.Tables[0].Rows[0]["IDfac"].ToString();
+            textBox16.Text = ds.Tables[0].Rows[0]["IDfacturas"].ToString();
             textBox15.Text = ds.Tables[0].Rows[0]["Importe"].ToString();
             textBox14.Text = ds.Tables[0].Rows[0]["TipodePago"].ToString();
             textBox13.Text = ds.Tables[0].Rows[0]["IDTipoPago"].ToString();
@@ -126,6 +126,7 @@ namespace Mercado_De_Abasto
                     llenarDvgt();
                     Limpiar();
                     //dataGridView1.Columns.Clear();
+                    this.Hide();
 
                 }
             }

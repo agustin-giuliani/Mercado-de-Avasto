@@ -44,7 +44,7 @@ namespace Mercado_De_Abasto
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
            
-             SqlConnection con = new SqlConnection(Properties.Settings.Default.DBMercadoConnectionString);
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.DBMercadoConnectionString);
 
             string query = "select * from Cliente where " + comboBox1.Text + " like '%"+ textBox1.Text +"%'";
             SqlDataAdapter ada = new SqlDataAdapter(query, con);

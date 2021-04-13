@@ -33,6 +33,7 @@ namespace Entidades
         private string tipodePago;
         private DateTime fechaPago;
         private int importe;
+        private int idfacturas;
         #endregion
 
         #region constructor
@@ -62,6 +63,7 @@ namespace Entidades
             tipodePago = string.Empty;
             fechaPago = DateTime.MinValue;
             importe = 0;
+            idfacturas = 0;
         }
         #endregion
 
@@ -173,6 +175,11 @@ namespace Entidades
         {
             get { return importe; }
             set { importe = value; }
+        }
+        public int IDfacturas
+        {
+            get { return idfacturas; }
+            set { idfacturas = value; }
         }
         #endregion
     }

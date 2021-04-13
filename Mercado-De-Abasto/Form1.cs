@@ -20,8 +20,8 @@ namespace Mercado_De_Abasto
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Stock Stock = new Stock();
-            Stock.Show();
+            Provedores_y_detalle_de_la_compra provedores_Y_Detalle_De_La_Compra = new Provedores_y_detalle_de_la_compra();
+            provedores_Y_Detalle_De_La_Compra.Show(); ;
         }
 
         private void button2_Click(object sender, EventArgs e)

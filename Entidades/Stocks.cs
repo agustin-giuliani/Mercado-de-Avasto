@@ -18,7 +18,7 @@ namespace Entidades
         private string nomProvedor;
         //tabla Probedores
         private int idProv;
-        private string nombreProvedores;
+        private string nomProvedores;
         private string tel;
         private string domicilio;
         //Tabla compra
@@ -28,7 +28,7 @@ namespace Entidades
         private string factCOM;
         //Tabla detalle compra
         private int idDetCOM;
-        
+        private int idCompraST;
 
         #endregion
         #region constructor
@@ -43,7 +43,7 @@ namespace Entidades
             nomProvedor = string.Empty;
             //tabla provedores
             idProv = 0;
-            nombreProvedores = string.Empty;
+            nomProvedores = string.Empty;
             tel = string.Empty;
             domicilio = string.Empty;
             //tabla compra
@@ -53,7 +53,9 @@ namespace Entidades
             factCOM = string.Empty;
             //tabala detalle compra
             idDetCOM = 0;
-            
+            idCompraST = 0;
+
+
         }
         #endregion
 
@@ -100,10 +102,10 @@ namespace Entidades
             get { return idProv; }
             set { idProv = value; }
         }
-        public string NombreProvedores
+        public string NomProvedores
         {
-            get { return nombreProvedores; }
-            set { nombreProvedores = value; }
+            get { return nomProvedores; }
+            set { nomProvedores = value; }
         }
         public string Tel
         {
@@ -146,6 +148,12 @@ namespace Entidades
         {
             get { return cantidad; }
             set { cantidad = value; }
+        }
+
+        public int IDCST
+        {
+            get { return idCompraST; }
+            set { idCompraST = value; }
         }
         #endregion
     }

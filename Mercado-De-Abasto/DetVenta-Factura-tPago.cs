@@ -98,6 +98,8 @@ namespace Mercado_De_Abasto
 
         private void button6_Click(object sender, EventArgs e)
         {
+           
+           
             try
             {
                 int resultado = -1;
@@ -106,19 +108,23 @@ namespace Mercado_De_Abasto
                 if (resultado == -1)
                 {
                     MessageBox.Show("No se Borro el detalle de la factura en el sistema" + "INTENTE NUEVAMENTE");
+                   
                 }
                 else
                 {
                     MessageBox.Show("Se Borro con exito el detalle de la factura");
                     Limpiar();
                     //dataGridView1.Columns.Clear();
-                  
+                    this.Hide();
+
                 }
             }
             catch
             {
                 MessageBox.Show("ERROR AL borrar la factura:" +
                     "NO EXISTE LA FACTURA O INGRESO MAL ALGUNA INFORMACION.");
+                Form5 form5 = new Form5();
+                form5.Show();
             }
         }
 

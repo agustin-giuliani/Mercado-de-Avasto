@@ -89,6 +89,8 @@ namespace Mercado_De_Abasto
                     MessageBox.Show("Se grabo con exito en el stock");
                     llenarDvg();
                     Limpiar();
+                    Provedores_y_detalle_de_la_compra provedores_Y_Detalle_De_La_Compra = new Provedores_y_detalle_de_la_compra();
+                    provedores_Y_Detalle_De_La_Compra.Show(); ;
                 }
 
 

@@ -17,7 +17,7 @@ namespace Mercado_De_Abasto
         public Venta()
         {
             InitializeComponent();
-            dataGridView1.ColumnCount = 14;
+            dataGridView1.ColumnCount = 19;
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Producto";
             dataGridView1.Columns[2].HeaderText = "Cantidad";
@@ -32,6 +32,11 @@ namespace Mercado_De_Abasto
             dataGridView1.Columns[11].HeaderText = "Fecha Factura";
             dataGridView1.Columns[12].HeaderText = "IDCliente";
             dataGridView1.Columns[13].HeaderText = "IDVenta";
+            dataGridView1.Columns[14].HeaderText = "ID tipo de pago";
+            dataGridView1.Columns[15].HeaderText = "Tipo de Pago";
+            dataGridView1.Columns[16].HeaderText = "Fecha del pago";
+            dataGridView1.Columns[17].HeaderText = "importe";
+            dataGridView1.Columns[18].HeaderText = "ID Factura";
 
             dataGridView1.Columns[0].Width = 125;
             dataGridView1.Columns[1].Width = 125;
@@ -47,6 +52,11 @@ namespace Mercado_De_Abasto
             dataGridView1.Columns[11].Width = 125;
             dataGridView1.Columns[12].Width = 125;
             dataGridView1.Columns[13].Width = 125;
+            dataGridView1.Columns[14].Width = 125;
+            dataGridView1.Columns[15].Width = 125;
+            dataGridView1.Columns[16].Width = 125;
+            dataGridView1.Columns[17].Width = 125;
+            dataGridView1.Columns[18].Width = 125;
             llenarDvg();
         }
         public Cliente objEntCliente = new Cliente();
@@ -64,7 +74,7 @@ namespace Mercado_De_Abasto
             {
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5], dr[6], dr[7], dr[8], dr[9], dr[10], dr[11], dr[12], dr[13]);
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4], dr[5], dr[6], dr[7], dr[8], dr[9], dr[10], dr[11], dr[12], dr[13], dr[14], dr[15], dr[16], dr[17], dr[18]);
                 }
             }
             else
@@ -187,6 +197,7 @@ namespace Mercado_De_Abasto
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             try
             {
                 int resultado = -1;
@@ -195,6 +206,7 @@ namespace Mercado_De_Abasto
                 if (resultado == -1)
                 {
                     MessageBox.Show("No se Borro el cliente en el sistema" + "INTENTE NUEVAMENTE");
+               
                 }
                 else
                 {
@@ -203,10 +215,13 @@ namespace Mercado_De_Abasto
                     Limpiar();
                     //dataGridView1.Columns.Clear();
                     button1.Visible = true;
+                    this.Hide();
                 }
             }
             catch
             {
+                DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
+                detVenta_Factura_TPago.Show();
                 MessageBox.Show("ERROR AL borrar Cliente:" +
                     "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
             }
