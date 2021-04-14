@@ -170,6 +170,8 @@ namespace Mercado_De_Abasto
                     Limpiar();
                     textBox1.Enabled = true;
                     button1.Visible = true;
+                    DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
+                    detVenta_Factura_TPago.Show();
                 }
 
 
@@ -197,7 +199,8 @@ namespace Mercado_De_Abasto
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("PARA BORRAR VENTA:" +
+                     "Tiene que borrar factura");
             try
             {
                 int resultado = -1;
@@ -205,12 +208,12 @@ namespace Mercado_De_Abasto
                 resultado = objNegVenta.DeleteVenta("Delet", objEntVenta);
                 if (resultado == -1)
                 {
-                    MessageBox.Show("No se Borro el cliente en el sistema" + "INTENTE NUEVAMENTE");
+                    MessageBox.Show("No se Borro el Venta en el sistema" + "INTENTE NUEVAMENTE");
                
                 }
                 else
                 {
-                    MessageBox.Show("Se Borro con exito el cliente");
+                    MessageBox.Show("Se Borro con exito el Venta");
                     llenarDvg();
                     Limpiar();
                     //dataGridView1.Columns.Clear();
@@ -222,8 +225,6 @@ namespace Mercado_De_Abasto
             {
                 DetVenta_Factura_tPago detVenta_Factura_TPago = new DetVenta_Factura_tPago();
                 detVenta_Factura_TPago.Show();
-                MessageBox.Show("ERROR AL borrar Cliente:" +
-                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
 

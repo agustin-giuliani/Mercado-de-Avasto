@@ -141,6 +141,9 @@ namespace Mercado_De_Abasto
                     Limpiar();
                     textBox1.Enabled = true;
                     button1.Visible = true;
+                    this.Hide();
+                    Provedores_y_detalle_de_la_compra provedores_Y_Detalle_De_La_Compra = new Provedores_y_detalle_de_la_compra();
+                    provedores_Y_Detalle_De_La_Compra.Show(); ;
                 }
 
 
@@ -168,7 +171,7 @@ namespace Mercado_De_Abasto
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Si no a borrado el stock tiene que borrar los datos de provedores:");
             try
             {
                 int resultado = -1;
@@ -185,12 +188,14 @@ namespace Mercado_De_Abasto
                     Limpiar();
                     //dataGridView1.Columns.Clear();
                     button1.Visible = true;
+                    this.Hide();
                 }
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar Cliente:" +
-                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
+              
+                Provedores_y_detalle_de_la_compra provedores_Y_Detalle_De_La_Compra = new Provedores_y_detalle_de_la_compra();
+                provedores_Y_Detalle_De_La_Compra.Show(); ;
             }
 
         }

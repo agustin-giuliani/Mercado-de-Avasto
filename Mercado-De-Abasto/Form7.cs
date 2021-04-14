@@ -103,5 +103,33 @@ namespace Mercado_De_Abasto
                     "NO EXISTE el detalle de la compra O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_DC_obj();
+                resultado = objNegStock.ModDetCom("Modificar-DetCom", objEntStock);
+                if (resultado == -1)
+                    MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
+                else
+                {
+                    MessageBox.Show("Se Modifico con exito el producto");
+                    // llenarDvg();
+                    Limpiar();
+                    //textBox1.Enabled = true;
+                    button1.Visible = true;
+                    this.Hide();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL Modificar Stock:" +
+                    "NO EXISTE EL STOCK O INGRESO MAL ALGUNA INFORMACION.");
+            }
+        }
     }
 }

@@ -98,7 +98,8 @@ namespace Mercado_De_Abasto
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("PARA BORRAR Compra:" +
+                   "tiene que borrar los datos del detalle de la compra");
             try
             {
                 int resultado = -1;
@@ -120,25 +121,54 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar Compra:" +
-                    "NO EXISTE la compra O INGRESO MAL ALGUNA INFORMACION.");
+            
                 Form7 form7 = new Form7();
                 form7.Show();
             }
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_b_obj();
+                resultado = objNegStock.ModComst("Modificar-Com", objEntStock);
+                if (resultado == -1)
+                    MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
+                else
+                {
+                    MessageBox.Show("Se Modifico con exito el producto");
+                    //llenarDvg();
+                    Limpiar();
+                    //textBox1.Enabled = true;
+                    button1.Visible = true;
+                    this.Hide();
+                    Form7 form7 = new Form7();
+                    form7.Show();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL Modificar Stock:" +
+                    "NO EXISTE EL STOCK O INGRESO MAL ALGUNA INFORMACION.");
+            }
+        }
+
         //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
-          //  DataSet ds = new DataSet();
-            //objEntStock.IDcompraSt = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            //ds = objNegStock.listadoCompra(objEntStock.IDcompraSt.ToString());
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-             //   ds_b_TxtBox(ds);
-              //  button3.Visible = false;
+        //  DataSet ds = new DataSet();
+        //objEntStock.IDcompraSt = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+        //ds = objNegStock.listadoCompra(objEntStock.IDcompraSt.ToString());
+        //if (ds.Tables[0].Rows.Count > 0)
+        //{
+        //   ds_b_TxtBox(ds);
+        //  button3.Visible = false;
 
-            //}
+        //}
         //}
     }
 }

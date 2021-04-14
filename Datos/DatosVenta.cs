@@ -321,7 +321,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Venta", e);
             }
             finally
             {
@@ -330,6 +330,59 @@ namespace Datos
             }
             return resultado;
         }
+        #region
+        public int ModFactura (string accion, Ventax objVenta)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
 
+            if(accion=="Modificar-Factura")
+                orden= "update Facturas set NrFactura='"+objVenta.NrFactura+ "', TipoCuit='"+objVenta.TipoCuit+ "', Total='"+objVenta.Total+ "', Saldo='"+objVenta.Saldo+ "', FechaFac='"+objVenta.FechaFac.ToString("yyy/MM/dd") + "', IDCliente='"+objVenta.IDCliente+ "', IDventa='"+objVenta.IDventa+ "'Where IDfac='" + objVenta.IDfac+ "';";
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Factura", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+        #endregion
+        #region
+        public int ModTipoPago(string accion, Ventax objVenta)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Modificar-Tpago")
+                orden = "update TipodePago set TipodePago='" + objVenta.TipodePago + "', IDfacturas='" + objVenta.IDfacturas + "', Importe='" + objVenta.Importe + "', FechaPago='" + objVenta.FechaPago.ToString("yyy/MM/dd") + "'Where IDTipoPago='" + objVenta.IDTipoPago + "';";
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Tipo de pago", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+        #endregion
     }
 }

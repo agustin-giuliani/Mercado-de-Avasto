@@ -335,6 +335,82 @@ namespace Datos
             }
             return resultado;
         }
+        
+        public int ModProvedor(string accion, Stocks objStock)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Modificar-prov")
+                orden = "update Provedores set Tel='" + objStock.Tel + "', NomProvedores='" + objStock.NomProvedores + "', Domicilio='" + objStock.Domicilio + "'Where IDProv='" + objStock.IDProv + "';";
 
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+        public int ModComst(string accion, Stocks objStock)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Modificar-Com")
+                orden= "update CompraStock set IDProvedores='" + objStock.IDProvedores + "', FechaCOM='" + objStock.FechaCOM.ToString("yyy/MM/dd") + "', FactCOM='" + objStock.FactCOM + "'Where IDcompraSt='" + objStock.IDcompraSt + "';";
+
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
+        public int ModDetCom(string accion, Stocks objStock)
+        {
+            int resultado = -1;
+            string orden = string.Empty;
+            if (accion == "Modificar-DetCom")
+                orden = "update DETCompra set IDCST='" + objStock.IDCST + "', Cantidad='" + objStock.Cantidad + "', Precio='" + objStock.Precio + "'Where IDDetCOM='" + objStock.IDDetCOM + "';";
+
+            SqlCommand cmd = new SqlCommand(orden, conexion);
+
+            try
+            {
+                Abrirconexion();
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errror al tratar de guardar,borrar o modificar de Stock", e);
+            }
+            finally
+            {
+                Cerrarconexion();
+                cmd.Dispose();
+            }
+            return resultado;
+        }
     }
 }

@@ -58,5 +58,13 @@ namespace Negocio
         {
             return objDatVenta.ModVenta(accion, objVenta);
         }
+        public int ModFactura(string accion, Ventax objVenta)
+        {
+            return objDatVenta.ModFactura(accion, objVenta);
+        }
+        public int ModTipoPago(string accion, Ventax objVenta)
+        {
+            return objDatVenta.ModTipoPago(accion, objVenta);
+        }
     }
 }

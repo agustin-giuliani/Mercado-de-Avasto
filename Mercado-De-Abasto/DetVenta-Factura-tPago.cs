@@ -98,8 +98,9 @@ namespace Mercado_De_Abasto
 
         private void button6_Click(object sender, EventArgs e)
         {
-           
-           
+            MessageBox.Show("PARA BORRAR FACTURA:" +
+                    "Tiene que a ver borrado los datos de tipo de pago");
+
             try
             {
                 int resultado = -1;
@@ -121,8 +122,6 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar la factura:" +
-                    "NO EXISTE LA FACTURA O INGRESO MAL ALGUNA INFORMACION.");
                 Form5 form5 = new Form5();
                 form5.Show();
             }
@@ -137,6 +136,37 @@ namespace Mercado_De_Abasto
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_F_obj();
+                resultado = objNegVenta.ModFactura("Modificar-Factura", objEntVenta);
+                if (resultado == -1)
+                    MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
+                else
+                {
+                    MessageBox.Show("Se Modifico con exito la Factura y tiene que modificar el tipo de pago");
+                    //llenarDvg();
+                    Limpiar();
+                    //textBox1.Enabled = true;
+                    button1.Visible = true;
+                    this.Hide();
+                    Form5 form5 = new Form5();
+                    form5.Show();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL Modificar Factura:" +
+                    "NO EXISTE LA Factura O INGRESO MAL ALGUNA INFORMACION.");
+            }
 
         }
     }

@@ -63,5 +63,18 @@ namespace Negocio
         {
             return objDatStock.ModStock(accion, objStock);
         }
+        public int ModProvedor(string accion, Stocks objStock)
+        {
+            return objDatStock.ModProvedor(accion, objStock);
+        }
+
+        public int ModComst(string accion, Stocks objStock)
+        {
+            return objDatStock.ModComst(accion, objStock);
+        }
+        public int ModDetCom(string accion, Stocks objStock)
+        {
+            return objDatStock.ModDetCom(accion, objStock);
+        }
     }
 }

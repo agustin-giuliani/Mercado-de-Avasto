@@ -17,41 +17,12 @@ namespace Mercado_De_Abasto
         public Form5()
         {
             InitializeComponent();
-            dataGridView3.ColumnCount = 5;
-            dataGridView3.Columns[0].HeaderText = "ID tipo de pago";
-            dataGridView3.Columns[1].HeaderText = "tipo de pago ";
-            dataGridView3.Columns[2].HeaderText = "Fecha de pago";
-            dataGridView3.Columns[3].HeaderText = "Importe";
-            dataGridView3.Columns[4].HeaderText = "ID de la factura";
-
-            dataGridView3.Columns[0].Width = 125;
-            dataGridView3.Columns[1].Width = 125;
-            dataGridView3.Columns[2].Width = 125;
-            dataGridView3.Columns[3].Width = 125;
-            dataGridView3.Columns[4].Width = 125;
-            llenarDvgt();
+         
         }
         public Cliente objEntCliente = new Cliente();
         public Ventax objEntVenta = new Ventax();
         public NegocioVenta objNegVenta = new NegocioVenta();
-        private void llenarDvgt()
-        {
-            dataGridView3.Rows.Clear();
-
-            DataSet ds = new DataSet();
-
-            ds = objNegVenta.listadoTipoPago("Todos");
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    dataGridView3.Rows.Add(dr[0].ToString(), dr[1], dr[2], dr[3], dr[4]);
-                }
-            }
-            else
-                MessageBox.Show("No existe tal Factura");
-        }
+      
         private void TxtBox_t_obj()
         {
             //recive los valores de los texbox
@@ -93,7 +64,7 @@ namespace Mercado_De_Abasto
                 else
                 {
                     MessageBox.Show("Se grabo con exito el tipo de pago");
-                    llenarDvgt();
+                    //llenarDvgt();
                     Limpiar();
                     this.Hide();
                     Venta venta = new Venta();
@@ -123,7 +94,7 @@ namespace Mercado_De_Abasto
                 else
                 {
                     MessageBox.Show("Se Borro con exito el tipo de pago");
-                    llenarDvgt();
+                    //llenarDvgt();
                     Limpiar();
                     //dataGridView1.Columns.Clear();
                     this.Hide();
@@ -142,16 +113,32 @@ namespace Mercado_De_Abasto
 
         }
 
-        private void dataGridView3_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            //vuelve a llenar los texbox con los datos de la DB
-            DataSet ds = new DataSet();
-            objEntVenta.IDTipoPago = Convert.ToInt32(dataGridView3.CurrentRow.Cells[0].Value);
-            ds = objNegVenta.listadoTipoPago(objEntVenta.IDTipoPago.ToString());
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                ds_t_TxtBox(ds);
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_t_obj();
+                resultado = objNegVenta.ModTipoPago("Modificar-Tpago", objEntVenta);
+                if (resultado == -1)
+                    MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
+                else
+                {
+                    MessageBox.Show("Se Modifico con exito el tipo de pago ");
+                    //llenarDvg();
+                    Limpiar();
+                    //textBox1.Enabled = true;
+                    button1.Visible = true;
+                    this.Hide();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL Modificar tipo de pago:" +
+                    "NO EXISTE LA Factura O INGRESO MAL ALGUNA INFORMACION.");
             }
         }
     }

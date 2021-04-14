@@ -100,10 +100,10 @@ namespace Mercado_De_Abasto
         private void ds_a_TxtBox(DataSet ds)
         {
           //balores provedor
-            textBox4.Text = ds.Tables[0].Rows[0]["Domicilio"].ToString();
-            textBox3.Text = ds.Tables[0].Rows[0]["Tel"].ToString();
-            textBox2.Text = ds.Tables[0].Rows[0]["NomProvedores"].ToString();
-            textBox1.Text = ds.Tables[0].Rows[0]["IDProv"].ToString();
+            //textBox4.Text = ds.Tables[0].Rows[0]["Domicilio"].ToString();
+            //textBox3.Text = ds.Tables[0].Rows[0]["Tel"].ToString();
+            //textBox2.Text = ds.Tables[0].Rows[0]["NomProvedores"].ToString();
+            //textBox1.Text = ds.Tables[0].Rows[0]["IDProv"].ToString();
 
             textBox1.Enabled = false;
         }
@@ -155,7 +155,8 @@ namespace Mercado_De_Abasto
 
         private void button5_Click(object sender, EventArgs e)
         {
-          
+            MessageBox.Show("Para borrar Provedores:" +
+                     "Tiene que borrar los datos de compra");
             try
             {
                 int resultado = -1;
@@ -178,8 +179,7 @@ namespace Mercado_De_Abasto
             }
             catch
             {
-                MessageBox.Show("ERROR AL borrar Cliente:" +
-                    "NO EXISTE EL CLIENTE O INGRESO MAL ALGUNA INFORMACION.");
+              
                 Form6 form6 = new Form6();
                 form6.Show();
             }
@@ -204,5 +204,35 @@ namespace Mercado_De_Abasto
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int resultado = -1;
+                TxtBox_a_obj_p();
+                resultado = objNegStock.ModProvedor("Modificar-prov", objEntStock);
+                if (resultado == -1)
+                    MessageBox.Show("No se Modifico el producto en el sistema" + "INTENTE NUEVAMENTE");
+                else
+                {
+                    MessageBox.Show("Se Modifico con exito el producto");
+                    llenarDvg();
+                    Limpiar();
+                    textBox1.Enabled = true;
+                    button1.Visible = true;
+                    Form6 form6 = new Form6();
+                    form6.Show();
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("ERROR AL Modificar Stock:" +
+                    "NO EXISTE EL STOCK O INGRESO MAL ALGUNA INFORMACION.");
+            }
+
+
+        }
     }
 }
